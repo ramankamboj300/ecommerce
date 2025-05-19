@@ -1,0 +1,37 @@
+<div class="account-container">
+  <h1 class="title">My Account</h1>
+
+  <div class="profile-details">
+    <h2>Profile Details</h2>
+    <p><strong>Name:</strong> {{customerInfo.name}}</p>
+    <p><strong>Email:</strong> {{customerInfo.email}}</p>
+  </div>
+
+  <div class="previous-orders">
+    <h2>Previous Orders</h2>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+            @for(item of OrderDetails;track item){
+
+                <tr>
+                    <td>#{{item.id}}</td>
+                    <td>2023-10-01</td>
+                    <td>{{item.orderStatus}}</td>
+                    <td>${{item.totalPrice}}</td>
+                </tr>
+            }
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

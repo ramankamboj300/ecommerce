@@ -1,0 +1,82 @@
+<div class="orders-container">
+    <h2>Orders</h2>
+    <table class="orders-table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>User Name</th>
+                <th>Products</th>
+                <th>Total Price</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(item of Orders;track item){
+
+            <tr>
+                <td>#{{item.id}}</td>
+                <td>
+                    {{item.name}}
+                </td>
+                
+                <td>
+                    <button (click)="getProductDetail(item.productsDetail)" title="View Products" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <i  class="fa fa-eye"></i>
+</button>
+                </td>
+                 <td>
+                    {{item.totalPrice}}
+                </td>
+                <td>{{item.orderStatus}}</td>
+                <td>
+                    <select [(ngModel)]="item.orderStatus" (change)="ChangeOrderStatusByAdmin(item.id, $event.target)" class="form-select" aria-label="Default select example">
+                        <option value="Pending" selected>Pending</option>
+                        <option value="Shipped">Shipped</option>
+                        <option value="Delivered">Delivered</option>
+                        <option value="Cancelled">Cancelled</option>
+                    </select>
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Products Detail</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <table class="orders-table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(item of Products;track item){
+
+            <tr>
+                <td>{{item.productName}}</td>
+                <td>
+                    {{item.totalPrice}}
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+    <div class="homepage">
+
+      <header class="header">
+        <div class="logo">Digital Shop</div>
+        <nav class="nav">
+          <a [routerLink]="['/homepage']">Home</a>
+          <a [routerLink]="['/homepage/shop']" routerLinkActive="router-link-active" >Products</a>
+          @if(isLogin){
+            <a [routerLink]="['/homepage/myaccount']">My Account</a>
+          }
+          <a class="cart-icon">
+            <i style="font-size: 20px;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="fa fa-shopping-cart"></i>
+          </a>
+          @if(isLogin){
+ <a class="logout-icon" (click)="logout()">
+            <i style="font-size: 20px;"  class="fa fa-sign-out"></i> Logout
+          </a>
+          }@else {
+            <a class="login-icon" (click)="login()">
+              <i style="font-size: 20px;" class="fa fa-sign-in"></i> Login
+            </a>
+          }
+         
+        </nav>
+      </header>
+
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title"  id="offcanvasRightLabel">My Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <!-- @if(cartShow){ -->
+        <app-cart></app-cart>
+    <!-- } -->
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+   <footer class="footer">
+        <p>&copy; 2025 Digital Shop. All rights reserved.</p>
+    </footer>
+</div>

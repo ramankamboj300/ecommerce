@@ -1,0 +1,84 @@
+<div class="add-product-form">
+    <h2>Add Product</h2>
+    <form [formGroup]="productForm">
+        <div class="form-group">
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" name="productName" formControlName="productName" class="form-control" placeholder="Enter product name" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" formControlName="price" class="form-control" placeholder="Enter product price" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"formControlName="description" class="form-control" placeholder="Enter product description" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <select id="category" name="category" formControlName="category" class="form-control" required>
+                <option value="" disabled selected>Select category</option>
+                @for(item of categories;track item){
+                    <option value="{{item.categoryName}}">{{item.categoryName}}</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="coverImage">Product Cover Image:</label>
+            <input type="file" id="coverImage" (change)="onImageUpload($event)" class="form-control">
+            <div>
+                <img width="150" [src]="ProductCoverImage" alt="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="productsImages">Product Images:</label>
+            <input type="file" id="productsImages" multiple="true" (change)="uploadMultipleFiles($event)" class="form-control">
+            <div>
+                @for(item of ProductImages;track item){
+                    <img width="150" [src]="item" [alt]="item">
+                }
+            </div>
+        </div>
+        <button type="button" (click)="addProduct()" class="btn btn-primary">Add Product</button>
+    </form>
+</div>
+
+<div class="responsive-table">
+    <h2>Product List</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Image</th>
+                <th>Product Images</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{ product.productName }}</td>
+                <td>
+                    <img src="{{link}}UploadFiles/{{product.coverImage}}" width="50" alt="">
+                </td>
+                <td>
+                    @if(product.productsImages && product.productsImages.includes(",")){
+                    @for(item of product.productsImages.split(",");track item){
+                        <img src="{{link}}UploadFiles/{{item}}" width="50" alt="">
+                    }
+                }
+
+                    <!-- <img src="{{link}}UploadFiles/{{product.coverImage}}" width="50" alt=""> -->
+                </td>
+                <td>{{ product.price | currency }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.description }}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm" (click)="getProductById(product.id)" >Edit</button>
+                    <button class="btn btn-danger btn-sm" (click)="deleteProductById(product.id)" >Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

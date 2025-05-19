@@ -1,0 +1,48 @@
+<div class="checkout-container">
+    <h1>Checkout</h1>
+
+    <!-- Cart Summary Section -->
+    <section class="cart-summary">
+        <h2>Cart Summary</h2>
+        <ul>
+            @for(item of cartDetail; track item.id){
+
+            <li>
+                <span>{{ item.productName }}</span>
+                <span>${{ item.price}}</span>
+            <li>
+            }
+        </ul>
+    </section>
+
+    <!-- Shipping Information Form -->
+    <section class="shipping-info">
+        <h2>Shipping Information</h2>
+        <form [formGroup]="orderForm">
+            <label for="name">Name</label>
+            <input type="text" name="name" formControlName="name" id="name" placeholder="Full Name" />
+
+             <label for="email">Email</label>
+            <input type="text" name="email" formControlName="email" id="email" placeholder="Email" />
+            
+            <label for="password">Password</label>
+            <input type="password" name="password" formControlName="password" id="password" placeholder="Password" />
+
+            <label for="address">Address</label>
+            <input type="text" name="address" formControlName="address" id="address" placeholder="Street Address" />
+
+            <label for="phone">Phone Number</label>
+            <input type="text" name="mobile" formControlName="mobile" id="phone" placeholder="Phone Number" />
+        </form>
+    </section>
+
+    <!-- Order Summary Box -->
+    <section class="order-summary">
+        <h2>Order Summary</h2>
+        <p>Total: ${{TotalAmount}}</p>
+    </section>
+
+    <!-- Place Order Button -->
+    <button class="place-order-btn" (click)="placeOrder()" type="button">Place Order</button>
+</div>
+

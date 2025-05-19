@@ -1,0 +1,29 @@
+<div class="orders-container">
+    <h2>Orders</h2>
+    <div class="search-container">
+        <input type="text" [(ngModel)]="searchValue" (keyup)="searchCustomers()" placeholder="Search customer..." class="search-input">
+        </div>
+    <table class="orders-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(item of Customers; track item.id){
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>
+                    {{ item.email }}
+                </td>
+                <td>
+                    {{ item.mobile }}
+                </td>
+                <td>{{ item.isActive }}</td>
+            }
+        </tbody>
+    </table>
+</div>

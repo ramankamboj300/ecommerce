@@ -1,0 +1,27 @@
+<section class="dashboard-cards">
+    <div class="card">
+        <h3>Total Sales</h3>
+        <p>${{ DashboardData?.totalSale }}</p>
+    </div>
+    <div class="card">
+        <h3>Orders</h3>
+        <p>{{ DashboardData?.orderCount }}</p>
+    </div>
+    <div class="card">
+        <h3>Customers</h3>
+        <p>{{ DashboardData?.customersCount }}</p>
+    </div>
+    <div class="card">
+        <h3>Products</h3>
+        <p>{{ DashboardData?.productsCount }}</p>
+    </div>
+</section>
+
+<section class="dashboard-charts">
+    <h2>Sales Overview</h2>
+    <div class="chart-placeholder">
+        <canvas #myChart width="700" height="400"></canvas>
+    </div>
+</section>
+
+

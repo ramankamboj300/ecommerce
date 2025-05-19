@@ -1,0 +1,21 @@
+
+    .hero {
+        text-align: center;
+        padding: 4rem 2rem;
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        color: #fff;
+    }
+
+    .cta-button {
+        padding: 0.75rem 1.5rem;
+        background-color: #fff;
+        color: #333;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .cta-button:hover {
+        background-color: #f4f4f4;
+    }

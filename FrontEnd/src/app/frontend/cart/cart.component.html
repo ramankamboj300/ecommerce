@@ -1,0 +1,38 @@
+<div class="cart-container">
+    <div class="cart-items">
+        @for(item of cartItems; track item.id) {
+
+        <div class="cart-item">
+            <img src="{{link}}UploadFiles/{{item.coverImage}}" alt="Product 1" class="product-image" />
+            <div class="product-details">
+            <h5>{{item.productName}}</h5>
+            <p>Price: ${{item.price}}</p>
+            <div class="quantity-control">
+                <button class="qty-btn">-</button>
+                <span class="quantity">1</span>
+                <button class="qty-btn">+</button>
+            </div>
+            </div>
+            <!-- <div class="item-total">
+            <p>Total: ${{item.price}}</p>
+            </div> -->
+            <i (click)="removeItemFromCart(item)" class="fa fa-trash"></i>
+        </div>
+        }
+
+    </div>
+    @if(cartItems.length == 0) {
+        <div class="empty-cart">
+            <h5>Your cart is empty</h5>
+            <p>Add items to your cart to see them here.</p>
+        </div>
+    }@else {
+    <div  class="cart-summary">
+        <h5>Cart Summary</h5>
+        <p>Total Items: {{totalItems}}</p>
+        <p>Grand Total: ${{grandTotal}}</p>
+        <button class="checkout-btn" (click)="navigatetoCheckout()">Proceed to Checkout</button>
+    </div>
+}
+</div>
+
