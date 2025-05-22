@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Raman\\2025\\EcommerceApis\\EcommerceApis\\EcommerceApis.csproj": {}
+    "D:\\Raman\\2025\\GIT\\ecommerce\\EcommerceApis\\EcommerceApis\\EcommerceApis.csproj": {}
   },
   "projects": {
-    "D:\\Raman\\2025\\EcommerceApis\\EcommerceApis\\EcommerceApis.csproj": {
+    "D:\\Raman\\2025\\GIT\\ecommerce\\EcommerceApis\\EcommerceApis\\EcommerceApis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Raman\\2025\\EcommerceApis\\EcommerceApis\\EcommerceApis.csproj",
+        "projectUniqueName": "D:\\Raman\\2025\\GIT\\ecommerce\\EcommerceApis\\EcommerceApis\\EcommerceApis.csproj",
         "projectName": "EcommerceApis",
-        "projectPath": "D:\\Raman\\2025\\EcommerceApis\\EcommerceApis\\EcommerceApis.csproj",
+        "projectPath": "D:\\Raman\\2025\\GIT\\ecommerce\\EcommerceApis\\EcommerceApis\\EcommerceApis.csproj",
         "packagesPath": "C:\\Users\\HP840-G3\\.nuget\\packages\\",
-        "outputPath": "D:\\Raman\\2025\\EcommerceApis\\EcommerceApis\\obj\\",
+        "outputPath": "D:\\Raman\\2025\\GIT\\ecommerce\\EcommerceApis\\EcommerceApis\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP840-G3\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.0, )"

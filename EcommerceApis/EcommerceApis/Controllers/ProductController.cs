@@ -10,6 +10,7 @@ using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EcommerceApis.Controllers
 {
@@ -106,6 +107,7 @@ namespace EcommerceApis.Controllers
             return new JwtSecurityTokenHandler().WriteToken(token1);
         }
 
+        [Authorize]
             [HttpPost("/api/AddUpdateProduct")]
         public apiResponse AddUpdateProduct(ProductsBO obj)
         {
@@ -145,6 +147,8 @@ namespace EcommerceApis.Controllers
             }   
         }
         [HttpGet("/api/GetProductByID")]
+        [Authorize]
+
         public apiResponse GetProductByID(int id)
         {
             try
@@ -165,6 +169,8 @@ namespace EcommerceApis.Controllers
                 throw;
             }
         }
+        [Authorize]
+
         [HttpGet("/api/GetAllProducts")]
         public apiResponse GetAllProducts()
         {
@@ -186,6 +192,8 @@ namespace EcommerceApis.Controllers
                 throw;
             }
         }
+        [Authorize]
+
         [HttpPost("/api/UploadFiles")]
         public async Task<apiResponse> UploadFiles(List<IFormFile> files)
         {
@@ -215,6 +223,7 @@ namespace EcommerceApis.Controllers
                 throw;
             }
         }
+        [Authorize]
 
         [HttpGet("/api/DeleteProductByID")]
         public apiResponse DeleteProductByID(int id)

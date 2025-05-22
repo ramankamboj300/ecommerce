@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "JhBtKicTismODGnO3IiMabajCreGdDmMq28Igawf8diVKOcopBXrGykq5voAAdsnwz38ypHgZUZ0JvDMZVfZTw==",
+  "dgSpecHash": "C9sNqx1BjXyg1vr0RklzLU8fOegXRTGnB8aQovePNdnQOTxwSMI+XcmvF7sAY7ded4piq8rBG0T6X1FoJLPZlw==",
   "success": true,
-  "projectFilePath": "D:\\Raman\\2025\\EcommerceApis\\EcommerceApis\\EcommerceApis.csproj",
+  "projectFilePath": "D:\\Raman\\2025\\GIT\\ecommerce\\EcommerceApis\\EcommerceApis\\EcommerceApis.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\HP840-G3\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.0\\microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",
     "C:\\Users\\HP840-G3\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\HP840-G3\\.nuget\\packages\\microsoft.bcl.timeprovider\\8.0.1\\microsoft.bcl.timeprovider.8.0.1.nupkg.sha512",
     "C:\\Users\\HP840-G3\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
@@ -27,8 +28,8 @@
     "C:\\Users\\HP840-G3\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.10.0\\microsoft.identitymodel.abstractions.8.10.0.nupkg.sha512",
     "C:\\Users\\HP840-G3\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.10.0\\microsoft.identitymodel.jsonwebtokens.8.10.0.nupkg.sha512",
     "C:\\Users\\HP840-G3\\.nuget\\packages\\microsoft.identitymodel.logging\\8.10.0\\microsoft.identitymodel.logging.8.10.0.nupkg.sha512",
-    "C:\\Users\\HP840-G3\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.8.0\\microsoft.identitymodel.protocols.6.8.0.nupkg.sha512",
-    "C:\\Users\\HP840-G3\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.8.0\\microsoft.identitymodel.protocols.openidconnect.6.8.0.nupkg.sha512",
+    "C:\\Users\\HP840-G3\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.10.0\\microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
+    "C:\\Users\\HP840-G3\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.10.0\\microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
     "C:\\Users\\HP840-G3\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.10.0\\microsoft.identitymodel.tokens.8.10.0.nupkg.sha512",
     "C:\\Users\\HP840-G3\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\HP840-G3\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

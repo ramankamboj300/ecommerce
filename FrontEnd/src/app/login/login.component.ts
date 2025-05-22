@@ -33,6 +33,7 @@ export class LoginComponent {
     debugger
     this.loginservice.login(this.email,this.password).subscribe((res:any)=>{
       if(res.message=="Login Success"){
+        localStorage.setItem("token",res.token);
         if(res.result.id==1){
           localStorage.setItem("userinfo",JSON.stringify(res.result));
           this.router.navigate(['/overview']);
