@@ -157,6 +157,45 @@ namespace EcommerceApis.Controllers
                 throw;
             }
         }
+
+        [HttpGet("/api/getInvoiceDataByOrderID")]
+        public apiResponse getInvoiceDataByOrderID(int OrderID)
+        {
+            try
+            {
+                var orderDetails = (from a in _dbcontaxt.Orders
+                                    join user in _dbcontaxt.Users on a.UserID equals user.ID
+                                    let ProductsDetail = (from prod in _dbcontaxt.Products
+                                                          join b in _dbcontaxt.OrderDetail on a.ID equals b.OrderID
+                                                          where prod.ID == b.ProductID
+                                                          select new
+                                                          {
+                                                              prod.ProductName,
+                                                              b.TotalPrice,
+                                                              b.CreatedAt,
+                                                              b.Quantity,
+                                                              prod.Description
+                                                          }).ToList()
+                                    where a.ID == OrderID
+                                    select new
+                                    {
+                                        user.Name,
+                                        user.Email,
+                                        createDate = ProductsDetail.FirstOrDefault().CreatedAt,
+                                        shippingAddress = a.ShippingAddress,
+                                        a.OrderStatus,
+                                        a.ID,
+                                        ProductsDetail,
+                                        TotalPrice = ProductsDetail.Sum(x => x.TotalPrice)
+                                    }).ToList();
+                return new apiResponse { message = "Ok", result = orderDetails };
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         [HttpGet("/api/getSalesRevenue")]
         public apiResponse getSalesRevenue()
         {

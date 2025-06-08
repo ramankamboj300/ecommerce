@@ -21,12 +21,14 @@
         <form [formGroup]="orderForm">
             <label for="name">Name</label>
             <input type="text" name="name" formControlName="name" id="name" placeholder="Full Name" />
+            @if(!isLogin){
 
              <label for="email">Email</label>
             <input type="text" name="email" formControlName="email" id="email" placeholder="Email" />
-            
-            <label for="password">Password</label>
-            <input type="password" name="password" formControlName="password" id="password" placeholder="Password" />
+
+                <label for="password">Password</label>
+                <input type="password" name="password" formControlName="password" id="password" placeholder="Password" />
+            }
 
             <label for="address">Address</label>
             <input type="text" name="address" formControlName="address" id="address" placeholder="Street Address" />
@@ -43,6 +45,6 @@
     </section>
 
     <!-- Place Order Button -->
-    <button class="place-order-btn" (click)="placeOrder()" type="button">Place Order</button>
+    <button class="place-order-btn" (click)="createpayment()" type="button">Place Order</button>
 </div>
 

@@ -1,0 +1,71 @@
+<div class="invoice-box" id="invoice">
+  <header>
+    <div class="company-info">
+      <h2>ShopX Online Store</h2>
+      <p>www.shopx.com</p>
+      <p>supportshopx.com</p>
+    </div>
+    <div class="invoice-details">
+      <p><strong>Invoice #: </strong>{{InvoiceDetails.id}}</p>
+      <p><strong>Date Issued: </strong>{{InvoiceDetails.createDate}}</p>
+    </div>
+  </header>
+
+  <section class="bill-to">
+    <div>
+      <h4>Bill To:</h4>
+      <p>{{InvoiceDetails.name}}</p>
+      <p>{{InvoiceDetails.shippingAddress}}</p>
+      <p>{{InvoiceDetails.email}}</p>
+    </div>
+  </section>
+
+  <section class="items">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Product Name</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(item of InvoiceDetails.productsDetail; track item.id) {
+        <tr>
+          <td>1</td>
+          <td>{{item.productName}}</td>
+          <td>{{item.description}}</td>
+          <td>{{item.quantity}}</td>
+          <td>{{item.totalPrice}}</td>
+          <td>{{item.totalPrice}}</td>
+        </tr>
+      }
+
+      </tbody>
+    </table>
+  </section>
+
+  <section class="totals">
+    <table>
+      <tr>
+        <td><strong>Subtotal</strong></td>
+        <td>${{InvoiceDetails.totalPrice}}</td>
+      </tr>
+      <tr class="grand-total">
+        <td><strong>Total</strong></td>
+        <td>${{InvoiceDetails.totalPrice}}</td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
+    <p>Thank you for your purchase!</p>
+    <p>If you have any questions, please contact supportshopx.com</p>
+  </footer>
+</div>
+
+
+<button class="btn btn-primary" (click)="downloadPDF()">Print Invoice</button>

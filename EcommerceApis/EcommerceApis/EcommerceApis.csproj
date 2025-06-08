@@ -9,8 +9,15 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Razorpay">
+      <HintPath>bin\Debug\net6.0\Razorpay.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { CartComponent } from '../cart/cart.component';
+import { AppComponent } from '../../app.component';
 
 @Component({
   selector: 'app-main',
@@ -11,8 +12,12 @@ import { CartComponent } from '../cart/cart.component';
 })
 export class MainComponent {
   isLogin: boolean = false;
-  constructor(private router:Router){
+  cartShow=false
+  constructor(private router:Router, private appcomp:AppComponent){
     var userInfo = localStorage.getItem("customerInfo");
+     if(localStorage.getItem("userinfo")){
+      appcomp.logout();
+    }
     if(userInfo){
       this.isLogin = true;
     }
@@ -26,6 +31,9 @@ export class MainComponent {
     localStorage.removeItem("customerInfo");
     this.isLogin = false;
     this.router.navigate(['/login']);
+  }
+  openCart(value: boolean) {
+    this.cartShow = value;
   }
 
 }

@@ -1,14 +1,14 @@
     <div class="homepage">
 
       <header class="header">
-        <div class="logo">Digital Shop</div>
+        <div ><a class="logo" [routerLink]="['/homepage']">Digital Shop</a></div>
         <nav class="nav">
           <a [routerLink]="['/homepage']">Home</a>
           <a [routerLink]="['/homepage/shop']" routerLinkActive="router-link-active" >Products</a>
           @if(isLogin){
             <a [routerLink]="['/homepage/myaccount']">My Account</a>
           }
-          <a class="cart-icon">
+          <a (click)="openCart(true)" class="cart-icon">
             <i style="font-size: 20px;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="fa fa-shopping-cart"></i>
           </a>
           @if(isLogin){
@@ -27,13 +27,13 @@
 
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title"  id="offcanvasRightLabel">My Cart</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">My Cart</h5>
+    <button (click)="openCart(false)" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    <!-- @if(cartShow){ -->
+    @if(cartShow){
         <app-cart></app-cart>
-    <!-- } -->
+    }
   </div>
 </div>
 

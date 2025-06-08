@@ -18,4 +18,13 @@ export class HomeService {
     debugger
     return this.httpclient.post(this.apiurl+"PlaceOrder",order);
   }
+  GetProductByID(id:any):Observable<any>{
+    return this.httpclient.get(this.apiurl+"GetProductByID?id="+id);
+  }
+    createOrder(amount: number): Observable<any> {
+  return this.httpclient.post<any>(this.apiurl+'Payment/createOrder', { amount });
+}
+verifyPayment(payment:any): Observable<any> {
+  return this.httpclient.post<any>(this.apiurl+'Payment/verify-payment', payment );
+}
 }

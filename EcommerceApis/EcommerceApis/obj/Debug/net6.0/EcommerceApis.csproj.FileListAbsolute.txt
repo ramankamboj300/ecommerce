@@ -131,3 +131,4 @@ D:\Raman\2025\GIT\ecommerce\EcommerceApis\EcommerceApis\obj\Debug\net6.0\Ecommer
 D:\Raman\2025\GIT\ecommerce\EcommerceApis\EcommerceApis\obj\Debug\net6.0\EcommerceApis.genruntimeconfig.cache
 D:\Raman\2025\GIT\ecommerce\EcommerceApis\EcommerceApis\obj\Debug\net6.0\ref\EcommerceApis.dll
 D:\Raman\2025\GIT\ecommerce\EcommerceApis\EcommerceApis\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Raman\2025\GIT\ecommerce\EcommerceApis\EcommerceApis\bin\Debug\net6.0\Newtonsoft.Json.dll

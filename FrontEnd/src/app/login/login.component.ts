@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { LoginService } from './login.service';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -14,8 +15,8 @@ export class LoginComponent {
   isLogin: boolean = false;
   email: any;
   password: any;
-
-  constructor(private loginservice:LoginService,private router:Router){
+  signupForm:any;
+  constructor(private loginservice:LoginService,private router:Router,private appcomp:AppComponent,private fb:FormBuilder){
     if(localStorage.getItem("userinfo")){
     var userInfo = JSON.parse(localStorage.getItem("userinfo") || '{}');
       if(userInfo.id==1){
@@ -25,6 +26,11 @@ export class LoginComponent {
           this.router.navigate(['/homepage']);
         }
       }
+      this.signupForm = this.fb.group({
+        name: [''],
+        password: [''],
+        email: [''],
+      });
   }
   toggleForm(){
     this.isLogin = !this.isLogin;
@@ -36,15 +42,29 @@ export class LoginComponent {
         localStorage.setItem("token",res.token);
         if(res.result.id==1){
           localStorage.setItem("userinfo",JSON.stringify(res.result));
+      this.appcomp.checkLogin();
+
           this.router.navigate(['/overview']);
         }else{
           debugger
           localStorage.setItem("customerInfo",JSON.stringify(res.result));
           this.router.navigate(['/homepage']);
         }
-      };
-      alert(res.message);
+      }else{
+        alert(res.message);
+      }
   })
+}
+createUser(){
+  console.log("signupForm",this.signupForm.value);
+  this.loginservice.createUser(this.signupForm.value).subscribe((res:any)=>{  
+    if(res.message=="Ok"){
+      alert("User Created Successfully");
+      this.signupForm.reset();
+    }else{
+      alert(res.message);
+    }
+  });
 }
 
   ngOnInit() {

@@ -1,0 +1,116 @@
+/* Root container */
+.invoice-box {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header section */
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.company-info h2 {
+  margin: 0;
+  color: #333;
+  font-size: 24px;
+}
+
+.company-info p {
+  margin: 2px 0;
+  color: #777;
+  font-size: 14px;
+}
+
+.invoice-details {
+  text-align: right;
+}
+
+.invoice-details p {
+  margin: 2px 0;
+  color: #555;
+}
+
+/* Billing section */
+.bill-to {
+  margin-bottom: 20px;
+}
+
+.bill-to h4 {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #555;
+}
+
+.bill-to p {
+  margin: 2px 0;
+  color: #333;
+}
+
+/* Item table */
+.items table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.items th,
+.items td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.items th {
+  background-color: #f8f8f8;
+  font-weight: 600;
+  color: #333;
+}
+
+.items td {
+  background-color: #fff;
+}
+
+/* Totals table */
+.totals {
+  max-width: 300px;
+  margin-left: auto;
+  margin-top: 30px;
+}
+
+.totals table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.totals td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.totals tr.grand-total td {
+  font-weight: bold;
+  font-size: 17px;
+  background-color: #f0f0f0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  color: #666;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}

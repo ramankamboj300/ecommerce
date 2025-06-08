@@ -17,4 +17,8 @@ export class LoginService {
   getOrdersByUserID(userId:any):Observable<any>{
     return this.httpclient.get(this.apiurl+"GetOrdersByUserID?id="+userId);
   }
+  createUser(user:any):Observable<any>{
+    return this.httpclient.post(this.apiurl+"createUser",user);
+  }
+
 }

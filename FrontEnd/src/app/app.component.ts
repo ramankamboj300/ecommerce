@@ -10,9 +10,13 @@ import { Router, RouterModule, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'E-Commerce';
-  IsLogin: boolean = false;
+  IsLogin: boolean = true;
   constructor(private router:Router){
-    if(localStorage.getItem("userinfo")){
+ this.checkLogin();
+  }
+
+  checkLogin(){
+       if(localStorage.getItem("userinfo")){
       this.IsLogin = true;
     }else{
       this.IsLogin = false;
@@ -23,7 +27,6 @@ export class AppComponent {
     localStorage.removeItem("userinfo");
     this.IsLogin = false;
     this.router.navigate(['/login']);
-
   }
 
 
